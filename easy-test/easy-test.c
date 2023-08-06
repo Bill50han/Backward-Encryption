@@ -1,11 +1,26 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
+#include <Windows.h>
+#include <setjmp.h>
 
-extern void Int0f();
+extern ULONGLONG testWinMain();
 
 int main()
 {
-    printf("%p\n", Int0f);
+    ULONGLONG r = 0;
+    jmp_buf buf = { 0 };
+    setjmp(buf);
+    __try
+    {
+
+        r = testWinMain();
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER) {
+        longjmp(buf, 1);
+    }
+
+    printf("return %ull\n", r);
+
     system("pause");
 }
 

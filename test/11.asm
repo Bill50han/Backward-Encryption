@@ -1,7 +1,7 @@
 [BITS 64]
 
 SECTION .text
-global WinMain
+global testWinMain
 global aaa
 
 aaa:
@@ -16,7 +16,7 @@ l2:
 int 0fh
 db l3 - l1 - 1
 l3:
-WinMain:
+testWinMain:
 	mov rax, 3
 int 0fh
 db l4 - l2 -1

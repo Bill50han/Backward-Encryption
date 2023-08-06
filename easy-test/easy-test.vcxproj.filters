@@ -20,8 +20,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="..\倒叙加密\int.asm">
+    <NASM Include="..\test\11.asm">
       <Filter>源文件</Filter>
-    </MASM>
+    </NASM>
   </ItemGroup>
 </Project>
